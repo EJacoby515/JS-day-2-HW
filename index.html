@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="main.css">
+
+<script src="main.js"></script>
+<title>JS day 2 HW</title>
+</head>
+<body>
+<div class="js-code">
+    <div class="container" bs5-grid-row>
+        <code>
+            // Q1<br><br>
+
+        let person3  = {<br>
+            pizza:["Deep Dish","South Side Thin Crust"],<br>
+            tacos:"Anything not from Taco bell",<br>
+            burgers:"Portillos Burgers",<br>
+            ice_cream:["Chocolate","Vanilla","Oreo"],<br>
+            shakes:[{<br>
+                oberwise:"Chocolate",<br>
+                dunkin:"Vanilla",<br>
+                culvers:"All of them",<br>
+                mcDonalds:"Sham-rock-shake",<br>
+                cupids_candies:"Chocolate Malt"<br>
+            }]<Br>
+        <br>
+        }<br>
+        
+        function displayFavFoods(person) {<br>
+            for (let[key, value] of Object.entries(person)){<br>
+                if (Array.isArray(value)) {<br>
+                    console.log(`${key}: ${value.join(", ")}`);<br>
+                } else {<br>
+                    console.log(`${key}: ${value}`);<Br>
+                }<br>
+                if (key === 'shakes' && Array.isArray(value)) {<br>
+                    for (let shakePreference of value) {<br>
+                        for (let  [shakeShop, shakeFlavor] of Object.entries(shakePreference)) {<br>
+                            console.log(`${shakeShop}: ${shakeFlavor}`);<br>
+                      }<br>
+                    }<br>
+                }<br>
+            }<br>
+        }<br>
+        displayFavFoods(person3);<br><br>
+        <br>
+        // Q 2<br><br>
+        <br>
+        function Person(name, age) {<br>
+            this.Name = name;<br>
+            this.Age =  age;<br>
+        <br>
+            this.printInfo = ()  =>  {<br>
+                console.log(`${this.Name}, ${this.Age}`);<br>
+            };<br>
+        <br>
+            this.addAge  = () => {<br>
+                this.Age++;<br>
+            };<br>
+        }<br>
+        <br>
+        <br>
+        let person1 = new Person('Eliam',  1.5);<br>
+        let person2 =  new Person('Anderson', 0);<br>
+        <Br>
+        person1.addAge();<br>
+        person1.addAge();<br>
+        person1.addAge();<br>
+        <br>
+        <br>
+        person1.printInfo();<br>
+        person2.printInfo();<br>
+        <br>
+        <br>
+        // Q3 <br><br>
+        <br>
+        // function stringLength(string){<br>
+        //     if (string.length < 10) {<br>
+        //         console.log('Small Number')<br>
+        //     } else  {<br>
+        //         console.log('Big Word')<br>
+        //     }<br>
+        // }<br>
+        // stringLength('Hello and welcome to my TedTalk');<br>
+        
+        function strLng(str){<br>
+            const lengthPromise = new Promise((resolve, reject) =>{<br>
+                if (str.length  < 10) {<br>
+                    resolve ('Small Number');<br>
+                } else {<br>
+                    reject('Big Word!');<br>
+                }<br>
+            });<br>
+            console.log(lengthPromise);<br>
+        };<br>
+        strLng('Hello and welcome to my TedTalk')<br>
+    </code>
+        </p>
+</div>
+
+    </div>
+    
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
